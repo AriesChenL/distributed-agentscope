@@ -12,6 +12,22 @@
     <name>distributed-agentscope</name>
     <description>Distributed AgentScope Project</description>
 
+    <developers>
+        <developer>
+            <id>AriesChenL</id>
+            <name>lynn</name>
+            <email>arieschenl@github</email>
+            <url>https://github.com/AriesChenL</url>
+        </developer>
+        <developer>
+            <id>qwen-code</id>
+            <name>Qwen Code</name>
+            <email>qwen-code@alibabacloud.com</email>
+            <url>https://github.com/QwenLM</url>
+            <organization>Alibaba Cloud</organization>
+        </developer>
+    </developers>
+
     <modules>
         <module>agent-common</module>
         <module>agent-server</module>
