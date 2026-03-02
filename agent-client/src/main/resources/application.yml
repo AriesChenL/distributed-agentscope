@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: agent-client
+
+agent:
+  server:
+    url: http://localhost:8080
+
+logging:
+  level:
+    root: INFO
+    com.example.agent.client: DEBUG

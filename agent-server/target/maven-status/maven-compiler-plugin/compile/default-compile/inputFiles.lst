@@ -1,0 +1,16 @@
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\exception\GlobalExceptionHandler.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\AgentServerApplication.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\service\AgentService.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\service\IAgentService.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\service\MessageService.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\controller\AgentManagementController.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\dto\MessageRequest.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\controller\AgentController.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\controller\HealthController.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\controller\MessageController.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\entity\Agent.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\mapper\AgentMapper.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\service\AgentServiceImpl.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\repository\MessageRepository.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\config\MybatisPlusConfig.java
+D:\Code\java_code\distributed-agentscope\agent-server\src\main\java\com\example\agent\server\document\MessageDocument.java
