@@ -52,6 +52,56 @@ cd agent-client
 mvn spring-boot:run
 ```
 
+### Docker 快速启动
+
+**一键启动所有服务：**
+
+Linux/Mac:
+```bash
+chmod +x scripts/start.sh
+./scripts/start.sh start
+```
+
+Windows:
+```bash
+scripts\start.bat
+```
+
+**启动依赖服务（仅 MongoDB）：**
+
+```bash
+./scripts/start.sh start-deps
+```
+
+**其他 Docker 命令：**
+
+```bash
+# 构建镜像
+./scripts/start.sh build
+
+# 查看日志
+./scripts/start.sh logs
+
+# 查看状态
+./scripts/start.sh status
+
+# 停止服务
+./scripts/start.sh stop
+
+# 清理资源
+./scripts/start.sh clean
+```
+
+**服务访问地址：**
+- Agent Server: http://localhost:8080
+- Agent Client: http://localhost:8081
+- MongoDB: localhost:27017
+
+**启动说明：**
+- `docker-compose.yml` 已配置服务依赖关系
+- MongoDB 先启动并通过健康检查后，才会启动 Agent Server
+- Agent Server 启动后，才会启动 Agent Client
+
 ## API 接口
 
 ### Agent Server (http://localhost:8080)

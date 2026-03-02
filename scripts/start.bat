@@ -13,7 +13,7 @@ echo ============================================
 echo   Distributed AgentScope 快速启动菜单
 echo ============================================
 echo.
-echo   1. 启动所有服务
+echo   1. 启动所有服务 (MongoDB + Server + Client)
 echo   2. 停止所有服务
 echo   3. 重启所有服务
 echo   4. 构建 Docker 镜像
@@ -40,16 +40,31 @@ goto menu
 :start
 echo.
 echo [INFO] 正在启动所有服务...
+echo [INFO] 启动顺序：MongoDB -^> Agent Server -^> Agent Client
+echo.
 docker-compose up -d
 if %errorlevel% neq 0 (
     echo [ERROR] 启动失败
 ) else (
+    echo.
+    echo [INFO] 等待 MongoDB 就绪...
+    timeout /t 10 /nobreak >nul
+    
+    echo [INFO] 等待 Agent Server 就绪...
+    timeout /t 5 /nobreak >nul
+    
+    echo [INFO] 等待 Agent Client 就绪...
+    timeout /t 5 /nobreak >nul
+    
+    echo.
     echo [SUCCESS] 所有服务已启动
     echo.
-    echo 服务访问地址:
-    echo   Agent Server: http://localhost:8080
-    echo   Agent Client: http://localhost:8081
-    echo   MongoDB:      localhost:27017
+    echo ============================================
+    echo   服务访问地址:
+    echo     Agent Server: http://localhost:8080
+    echo     Agent Client: http://localhost:8081
+    echo     MongoDB:      localhost:27017
+    echo ============================================
 )
 echo.
 pause

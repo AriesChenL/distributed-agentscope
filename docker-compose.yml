@@ -21,10 +21,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 30s
 
-  # H2 Database (通过容器暴露)
-  # H2 是内存数据库，运行在 agent-server 中
-  
   # Agent Server
   agent-server:
     build:
@@ -63,7 +61,8 @@ services:
     ports:
       - "8081:8081"
     depends_on:
-      - agent-server
+      agent-server:
+        condition: service_started
     networks:
       - agentscope-network
     volumes:
