@@ -1,5 +1,0 @@
-com\example\agent\client\controller\ClientHealthController.class
-com\example\agent\client\service\AgentClientService.class
-com\example\agent\client\AgentClientApplication.class
-com\example\agent\client\config\WebClientConfig.class
-com\example\agent\client\controller\ClientProxyController.class
