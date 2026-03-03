@@ -3,6 +3,19 @@ FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
+# 配置 Maven 阿里云镜像
+RUN mkdir -p ~/.m2 && echo '<?xml version="1.0" encoding="UTF-8"?>\
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">\
+  <mirrors>\
+    <mirror>\
+      <id>aliyun-maven</id>\
+      <mirrorOf>central</mirrorOf>\
+      <name>Aliyun Maven</name>\
+      <url>https://maven.aliyun.com/repository/public</url>\n\
+    </mirror>\n\
+  </mirrors>\n\
+</settings>' > ~/.m2/settings.xml
+
 # Copy pom files
 COPY pom.xml .
 COPY agent-common/pom.xml agent-common/
