@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # MongoDB - 用于消息存储
   mongodb:
-    image: mongo:7
+    image: mongo:latest
     container_name: agentscope-mongodb
     restart: unless-stopped
     environment:
