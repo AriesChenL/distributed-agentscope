@@ -38,3 +38,7 @@ buildNumber.properties
 # OS
 .DS_Store
 Thumbs.db
+
+# Code style
+checkstyle-result.xml
+checkstyle-checker.xml
