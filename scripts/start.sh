@@ -83,9 +83,9 @@ wait_for_mongodb() {
     log_info "等待 MongoDB 就绪..."
     local max_attempts=30
     local attempt=1
-    
+
     while [ $attempt -le $max_attempts ]; do
-        if docker exec agentscope-mongodb mongosh --eval "db.runCommand('ping')" &> /dev/null; then
+        if docker exec agentscope-mongodb mongosh --quiet --eval "db.adminCommand('ping')" &> /dev/null; then
             log_success "MongoDB 已就绪"
             return 0
         fi
@@ -93,7 +93,7 @@ wait_for_mongodb() {
         sleep 2
         attempt=$((attempt + 1))
     done
-    
+
     echo ""
     log_error "MongoDB 启动超时"
     return 1

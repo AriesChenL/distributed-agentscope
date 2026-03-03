@@ -25,6 +25,9 @@ FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
+# Install wget for healthcheck
+RUN apk add --no-cache wget
+
 # Copy the built jar
 COPY --from=build /app/agent-client/target/*.jar app.jar
 
