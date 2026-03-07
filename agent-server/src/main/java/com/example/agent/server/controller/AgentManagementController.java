@@ -5,6 +5,7 @@ import com.example.agent.server.entity.Agent;
 import com.example.agent.server.service.IAgentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -25,35 +26,35 @@ public class AgentManagementController {
     }
     
     @GetMapping("/{id}")
-    public ApiResponse<Agent> getAgentById(@PathVariable Long id) {
+    public ApiResponse<Agent> getAgentById(@PathVariable("id") Long id) {
         Agent agent = agentService.getAgentById(id);
         if (agent == null) {
             return ApiResponse.error(404, "Agent not found");
         }
         return ApiResponse.success(agent);
     }
-    
+
     @PostMapping
     public ApiResponse<Boolean> createAgent(@RequestBody Agent agent) {
         boolean result = agentService.createAgent(agent);
         return ApiResponse.success(result);
     }
-    
+
     @PutMapping("/{id}")
-    public ApiResponse<Boolean> updateAgent(@PathVariable Long id, @RequestBody Agent agent) {
+    public ApiResponse<Boolean> updateAgent(@PathVariable("id") Long id, @RequestBody Agent agent) {
         agent.setId(id);
         boolean result = agentService.updateAgent(agent);
         return ApiResponse.success(result);
     }
-    
+
     @DeleteMapping("/{id}")
-    public ApiResponse<Boolean> deleteAgent(@PathVariable Long id) {
+    public ApiResponse<Boolean> deleteAgent(@PathVariable("id") Long id) {
         boolean result = agentService.deleteAgent(id);
         return ApiResponse.success(result);
     }
     
     @GetMapping("/status/{status}")
-    public ApiResponse<List<Agent>> listAgentsByStatus(@PathVariable String status) {
+    public ApiResponse<List<Agent>> listAgentsByStatus(@PathVariable("status") String status) {
         List<Agent> agents = agentService.listAgentsByStatus(status);
         return ApiResponse.success(agents);
     }

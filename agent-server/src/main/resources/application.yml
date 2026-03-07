@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8888
 
 spring:
   application:
@@ -20,6 +20,8 @@ spring:
   sql:
     init:
       mode: always
+      schema-locations: classpath:db/schema.sql
+      data-locations: classpath:db/data.sql
 
 mybatis-plus:
   configuration:
@@ -37,3 +39,22 @@ logging:
     root: INFO
     com.example.agent.server: DEBUG
     org.springframework.data.mongodb.core: DEBUG
+    io.agentscope: DEBUG
+
+# AgentScope Java 配置
+agentscope:
+  enabled: true
+  # 选择模型提供商：ollama, openai, anthropic, gemini, dashscope
+  provider: ${AGENTSCOPE_PROVIDER:openai}
+  ollama:
+    # Ollama 本地服务地址
+    base-url: http://localhost:11434
+    # 模型名称：llama3.2, qwen3-max, mistral, phi3 等
+    model-name: qwen3-max
+  # OpenAI 配置（兼容 DeepSeek, MixAI 等）
+  openai:
+    api-key: ${OPENAI_API_KEY:your-api-key-here}
+    base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+    # MixAI: https://us.mixaicloud.com/v1
+    # DeepSeek: https://api.deepseek.com, 模型：deepseek-chat
+    model-name: ${AGENTSCOPE_MODEL_NAME:qwen-plus}

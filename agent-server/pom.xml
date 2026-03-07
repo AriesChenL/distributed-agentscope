@@ -38,6 +38,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- AgentScope Java - All-in-One -->
+        <dependency>
+            <groupId>io.agentscope</groupId>
+            <artifactId>agentscope</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>agent-common</artifactId>
