@@ -1,4 +1,4 @@
-package com.example.agent.server.dto;
+package com.example.agent.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,14 +15,14 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageRequest {
-    
+
     private String conversationId;
-    
+
     private String agentId;
-    
+
     private String role;
-    
+
     private String content;
-    
+
     private Map<String, Object> metadata;
 }

@@ -12,7 +12,7 @@ spring:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:agentdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
-    password: 
+    password:
   h2:
     console:
       enabled: true
@@ -58,3 +58,13 @@ agentscope:
     # MixAI: https://us.mixaicloud.com/v1
     # DeepSeek: https://api.deepseek.com, 模型：deepseek-chat
     model-name: ${AGENTSCOPE_MODEL_NAME:qwen-plus}
+  # AgentScope Studio 配置
+  studio:
+    # 是否启用 Studio 集成
+    enabled: true
+    # Studio 服务地址
+    url: http://localhost:3000
+    # 项目名称
+    project: DistributedAgentScope
+    # 是否自动启动对话循环
+    auto-start-chat: true

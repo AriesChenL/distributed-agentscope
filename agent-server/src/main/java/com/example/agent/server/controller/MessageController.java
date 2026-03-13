@@ -1,8 +1,8 @@
 package com.example.agent.server.controller;
 
 import com.example.agent.common.dto.ApiResponse;
+import com.example.agent.common.dto.MessageRequest;
 import com.example.agent.server.document.MessageDocument;
-import com.example.agent.server.dto.MessageRequest;
 import com.example.agent.server.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

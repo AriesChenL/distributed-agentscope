@@ -1,7 +1,7 @@
 package com.example.agent.server.service;
 
+import com.example.agent.common.dto.MessageRequest;
 import com.example.agent.server.document.MessageDocument;
-import com.example.agent.server.dto.MessageRequest;
 import com.example.agent.server.repository.MessageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

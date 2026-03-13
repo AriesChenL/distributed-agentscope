@@ -45,6 +45,13 @@
             <version>1.0.9</version>
         </dependency>
 
+        <!-- OkHttp for Studio Client -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>agent-common</artifactId>

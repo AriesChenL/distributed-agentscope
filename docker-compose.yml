@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  # AgentScope Studio - 可视化调试界面
+  agentscope-studio:
+    image: agentscope/studio:latest
+    container_name: agentscope-studio
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    networks:
+      - agentscope-network
+    environment:
+      - STUDIO_HOST=0.0.0.0
+      - STUDIO_PORT=3000
+
   # MongoDB - 用于消息存储
   mongodb:
     image: mongo:latest
